@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gifmooi - Gifta's Portfolio</title>
+  <meta name="description" content="Portfolio of Gifta, Information Systems and Technology student at ITB.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button class="logo" onclick="closeAllPanels()"><span class="logo-accent">gif</span>mooi</button>
+
+  <!-- HOME -->
+  <main class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Pick a topic to explore</p>
+      <h1>Hi, I'm <span class="text-gradient">Gifta</span></h1>
+      <p class="hero-text">Information Systems and Technology student at ITB, exploring web development, data science, and cybersecurity.</p>
+    </div>
+
+    <div class="pills">
+      <div class="pills-row">
+        <button class="pill" id="pill-about" onclick="openPanel('about-panel', this)">
+          <span class="dot dot-purple"></span> About
+        </button>
+        <button class="pill" id="pill-activities" onclick="openPanel('activities-panel', this)">
+          Activities <span class="dot dot-cyan"></span>
+        </button>
+      </div>
+      <button class="pill" id="pill-projects" onclick="openPanel('projects-panel', this)">
+        Projects <i class="fa-solid fa-chevron-down"></i>
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://instagram.com/gif_mooi_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/gifta-mooira-prasharnissa-10a62a261" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/giftamooi" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="mailto:giftamooira@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- ABOUT PANEL -->
+  <div class="panel-overlay" id="about-overlay" onclick="closePanel('about-panel', 'pill-about')"></div>
+  <div class="panel panel-left" id="about-panel">
+    <button class="close-btn" onclick="closePanel('about-panel', 'pill-about')" aria-label="Close panel"><i class="fa-solid fa-xmark"></i></button>
+
+    <div class="panel-inner about-grid">
+      <div class="profile-wrap">
+        <div class="profile-glow"></div>
+        <img src="assets/profile.jpg" alt="Gifta" class="profile-pic">
+      </div>
+      <div>
+        <p class="panel-eyebrow">Hello there</p>
+        <h2>About Me</h2>
+        <div class="about-text">
+          <p>Hello! I'm an Information Systems and Technology student at Institut Teknologi Bandung, currently in my fourth semester. I enjoy exploring web development, data science, and cybersecurity. While I'm still learning across all three fields, I'm always excited to try new things through different projects.</p>
+          <p>Outside of academics, I'm also active in student organizations and event committees, with a particular interest in research and community building.</p>
+          <p>Beyond that, I enjoy dancing, color guard, and swimming. These hobbies help me recharge during busy semesters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES PANEL -->
+  <div class="panel-overlay" id="activities-overlay" onclick="closePanel('activities-panel', 'pill-activities')"></div>
+  <div class="panel panel-right" id="activities-panel">
+    <button class="close-btn" onclick="closePanel('activities-panel', 'pill-activities')" aria-label="Close panel"><i class="fa-solid fa-xmark"></i></button>
+
+    <div class="panel-inner">
+      <p class="panel-eyebrow">What I've been up to</p>
+      <h2>Activities & Experience</h2>
+
+      <div class="achievement-card">
+        <div class="achievement-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div>
+          <p class="achievement-label">Achievement</p>
+          <h3>Second Best Color Guard, Display Open Category</h3>
+          <p class="achievement-desc">Bandung Marching Band Competition (BMBC) 2025, with MBWG ITB (Full Band)</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Organizational Roles</h3>
+      <div class="role-table">
+        <div class="role-row">
+          <span class="role-org">MBWG ITB</span>
+          <span class="role-name">Head of Research and Quality Control Division</span>
+          <span class="role-period">2026 - present</span>
+        </div>
+        <div class="role-row">
+          <span class="role-org">MBWG ITB</span>
+          <span class="role-name">Internal Affairs Staff</span>
+          <span class="role-period">2025 - 2026</span>
+        </div>
+        <div class="role-row">
+          <span class="role-org">HMIF ITB</span>
+          <span class="role-name">Welfare Staff (Internship)</span>
+          <span class="role-period">2025 - 2026</span>
+        </div>
+        <div class="role-row">
+          <span class="role-org">BPA STEI-K 2024</span>
+          <span class="role-name">Human Resources Staff</span>
+          <span class="role-period">2024 - 2025</span>
+        </div>
+      </div>
+
+      <h3 class="section-title">Event Committees</h3>
+      <div class="role-table" id="committee-table">
+        <div class="role-row">
+          <span class="role-org">Penutupan PINKA</span>
+          <span class="role-name">Materials and Methods Staff</span>
+          <span class="role-period">2026</span>
+        </div>
+        <div class="role-row">
+          <span class="role-org">Wisuda April HMIF ITB</span>
+          <span class="role-name">Artistic Staff</span>
+          <span class="role-period">2026</span>
+        </div>
+        <div class="role-row">
+          <span class="role-org">Panitia PINKA</span>
+          <span class="role-name">Materials and Methods Staff</span>
+          <span class="role-period">2025 - 2026</span>
+        </div>
+        <div class="role-row">
+          <span class="role-org">Kaderisasi Wilayah STEI-K</span>
+          <span class="role-name">Mentor</span>
+          <span class="role-period">2025</span>
+        </div>
+        <div class="role-row hidden-item">
+          <span class="role-org">Kaderisasi Wilayah STEI-K</span>
+          <span class="role-name">Field Staff</span>
+          <span class="role-period">2025</span>
+        </div>
+        <div class="role-row hidden-item">
+          <span class="role-org">HOURS 1.0 Welfare HMIF</span>
+          <span class="role-name">Event Staff</span>
+          <span class="role-period">2025</span>
+        </div>
+        <div class="role-row hidden-item">
+          <span class="role-org">IMPACT ITB 2025</span>
+          <span class="role-name">Fundraising Staff</span>
+          <span class="role-period">2025</span>
+        </div>
+        <div class="role-row hidden-item">
+          <span class="role-org">Malam Keakraban CG</span>
+          <span class="role-name">Event Staff</span>
+          <span class="role-period">2025</span>
+        </div>
+        <div class="role-row hidden-item">
+          <span class="role-org">Galatro Gathering STEI-K 2024</span>
+          <span class="role-name">Public Relations Staff</span>
+          <span class="role-period">2025</span>
+        </div>
+        <div class="role-row hidden-item">
+          <span class="role-org">Aku Masuk ITB 2025</span>
+          <span class="role-name">Entrepreneurship Staff</span>
+          <span class="role-period">2024 - 2025</span>
+        </div>
+      </div>
+      <button class="show-more-btn" onclick="toggleShowMore(this)">Show more <i class="fa-solid fa-chevron-down"></i></button>
+
+    </div>
+  </div>
+
+  <!-- PROJECTS PANEL -->
+  <div class="panel-overlay" id="projects-overlay" onclick="closePanel('projects-panel', 'pill-projects')"></div>
+  <div class="panel panel-bottom" id="projects-panel">
+    <button class="close-btn" onclick="closePanel('projects-panel', 'pill-projects')" aria-label="Close panel"><i class="fa-solid fa-xmark"></i></button>
+
+    <div class="panel-inner">
+      <p class="panel-eyebrow">Things I've built</p>
+      <h2>My Projects</h2>
+
+      <div class="project-list">
+
+        <article class="project-card" onclick="toggleCard(this)">
+          <div class="project-summary">
+            <div>
+              <h3>IoT Smoke Detection & Window Automation</h3>
+              <p class="project-short">An IoT system for detecting cigarette smoke and automatically controlling ventilation using ESP32 and MQTT.</p>
+            </div>
+            <div class="chevron-circle"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="project-details">
+            <img src="assets/projects/iot/prototype.jpeg" alt="IoT Prototype" class="project-image">
+            <p>A system built with two ESP32 boards communicating through MQTT: one detects cigarette smoke using an MQ-2 sensor, while the other responds automatically by controlling a servo motor for the window and a stepper motor for the fan.</p>
+            <p class="bts-label">Behind the scenes:</p>
+            <ul>
+              <li><span class="bullet"></span><span>Implemented the automatic response subsystem (servo and stepper motor)</span></li>
+              <li><span class="bullet"></span><span>Set up MQTT communication between the two ESP32 boards</span></li>
+              <li><span class="bullet"></span><span>Built a real time monitoring dashboard using React</span></li>
+              <li><span class="bullet"></span><span>Assembled the hardware prototype</span></li>
+              <li><span class="bullet"></span><span>Wrote the project documentation</span></li>
+            </ul>
+            <div class="tags">
+              <span>ESP32</span>
+              <span>MQTT</span>
+              <span>React</span>
+              <span>IoT</span>
+            </div>
+            <div class="link-row">
+              <a href="https://youtu.be/514ieGlVTVA?si=duEd5so6025DmrOG" target="_blank" class="btn-gradient"><i class="fa-solid fa-play"></i> Watch Demo Video</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" onclick="toggleCard(this)">
+          <div class="project-summary">
+            <div>
+              <h3>Invisible Watermarking (DCT)</h3>
+              <p class="project-short">Digital image watermarking using the DCT method, tested for robustness against JPEG compression.</p>
+            </div>
+            <div class="chevron-circle"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="project-details">
+            <img src="assets/projects/watermarking/grafik_korelasi.png" alt="Watermark Correlation Graph" class="project-image">
+            <p>A program that implements invisible watermarking on digital images using the Discrete Cosine Transform (DCT) method. The watermark is embedded into the Y channel (YCrCb color space) to keep the image visually unchanged, then tested for robustness against JPEG compression at different quality factors.</p>
+            <p class="bts-label">Behind the scenes:</p>
+            <ul>
+              <li><span class="bullet"></span><span>Implemented invisible watermarking using DCT with the YCrCb color space</span></li>
+              <li><span class="bullet"></span><span>Evaluated watermark robustness against JPEG compression at five different quality factors</span></li>
+              <li><span class="bullet"></span><span>Analyzed extraction results using correlation values and determined the robustness threshold</span></li>
+            </ul>
+            <div class="tags">
+              <span>Python</span>
+              <span>OpenCV</span>
+              <span>NumPy</span>
+              <span>Matplotlib</span>
+            </div>
+            <div class="link-row">
+              <a href="https://github.com/giftamooi/watermarking" target="_blank" class="btn-gradient">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" onclick="toggleCard(this)">
+          <div class="project-summary">
+            <div>
+              <h3>PANENin</h3>
+              <p class="project-short">An e-commerce app connecting farmers directly with buyers to reduce dependency on middlemen.</p>
+            </div>
+            <div class="chevron-circle"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="project-details">
+            <img src="assets/projects/panenin/mockup.png" alt="PANENin Mockup" class="project-image">
+            <p>PANENin is an e-commerce application focused on farmers as the main users on the producer and seller side. The app provides a marketplace, AI based price prediction, a farmer community, and a sales analytics dashboard to help farmers sell their harvest more fairly and transparently.</p>
+            <p class="bts-label">Behind the scenes:</p>
+            <ul>
+              <li><span class="bullet"></span><span>Contributed to problem research and identifying farmers' pain points</span></li>
+              <li><span class="bullet"></span><span>Took part in designing the UI/UX prototype in Figma for the marketplace, dashboard, and community features</span></li>
+              <li><span class="bullet"></span><span>Contributed to writing the Product Requirement Document and team presentation</span></li>
+            </ul>
+            <div class="tags">
+              <span>Figma</span>
+              <span>UI/UX</span>
+              <span>Product Design</span>
+            </div>
+            <div class="link-row">
+              <a href="https://www.figma.com/proto/zkbd2ADxcV4EZCZqqKzCrF/PANENin?node-id=577-538" target="_blank" class="btn-gradient">Open Prototype <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
