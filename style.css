@@ -6,7 +6,7 @@
   --border: oklch(0.32 0.05 280 / 60%);
   --purple-accent: oklch(0.72 0.18 295);
   --cyan-accent: oklch(0.82 0.14 215);
-  --gradient-cosmic: radial-gradient(ellipse at 50% 40%, oklch(0.20 0.04 280), oklch(0.14 0.03 275));
+  --gradient-cosmic: linear-gradient(135deg, oklch(0.30 0.07 290), oklch(0.14 0.03 275) 70%);
 }
 
 * {
@@ -607,14 +607,9 @@ footer {
 }
 
 .project-image {
-  display: block;
-  max-width: 100%;
-  max-height: 320px;
-  width: auto;
-  height: auto;
-  margin: 0 auto 24px;
+  width: 100%;
   border-radius: 12px;
-  object-fit: contain;
+  margin-bottom: 24px;
 }
 
 .project-details p {
